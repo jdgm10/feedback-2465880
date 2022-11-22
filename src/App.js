@@ -1,35 +1,23 @@
+//dependecias necesarias 
+import { useState } from "react"
+//data
+import Resenias from "./data/Resenias"
+
+//componentes
+import Header from "./componentes/Header"
+import ReseniaList from "./componentes/ReseniaList"
+
 function App(){
 
-    const bootcamps=[
-        {
-           id:1, 
-           name:'messi',
-           average_rating: 10
-        },
-        {
-            id:2, 
-            name:'cr7',
-            average_rating: 7  
-        }
-    ]
+   //Crear estado para los datos de reseñas  
+    const [listaresenias, setListaResenias]= useState(Resenias)
+
 return(
     
-    <div>
-        <h1>
-        listado de bootcamps
-    </h1>
-    <ul>
-    {
-    bootcamps.map((bootcamps, index) =>(
-        <li key={index} >
-            {
-            bootcamps.name
-        }
-        </li>
-    ))    
-    }
-    </ul>
-    </div>
+   <div className="container">
+   <ReseniaList listaresenias={listaresenias}/> 
+
+   </div >
 )
 }
 
