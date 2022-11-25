@@ -11,11 +11,17 @@ function App(){
 
    //Crear estado para los datos de reseñas  
     const [listaresenias, setListaResenias]= useState(Resenias)
+   
 
+    const deleteResenia = id =>{
+      window.confirm("estas seguro de borrar la resenia")
+    }
 return(
     
    <div className="container">
-   <ReseniaList listaresenias={listaresenias}/> 
+   <ReseniaList 
+   deleteResenia={deleteResenia}
+   listaresenias={listaresenias}/> 
 
    </div >
 )

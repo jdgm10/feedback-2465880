@@ -1,7 +1,7 @@
 
 import{ useState } from 'react'
 
-const Resenia =({ resenia }) => {
+const Resenia =({ resenia, deleteResenia }) => {
 
 //Definir estados iniciales 
 const [rating , setRating ] = useState(resenia.rating)
@@ -36,6 +36,10 @@ return(
  </button>
  <button onClick={addNota}>
     Resta nota
+ </button>
+
+ <button onClick={()=>deleteResenia(resenia.id)} className="close">
+    Eliminar
  </button>
 
         </div>

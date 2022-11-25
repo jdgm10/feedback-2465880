@@ -1,7 +1,7 @@
 import Resenia from "./Resenia"
 
 
-const ReseniaList = ({listaresenias}) =>{
+const ReseniaList = ({listaresenias, deleteResenia}) =>{
     if(!listaresenias || listaresenias.length===0){
    return <p>No hay reseñas</p>
 }else{
@@ -14,8 +14,12 @@ const ReseniaList = ({listaresenias}) =>{
 {
 listaresenias.map((resenia)=>(
 
-<Resenia key={resenia.id}
-resenia={resenia}/>
+<Resenia 
+deleteResenia={deleteResenia}
+key={resenia.id}
+resenia={resenia}
+/>
+
 ))
 
 }
